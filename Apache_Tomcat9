@@ -1,0 +1,97 @@
+1.Web Application(Webapp)
+  runs over the internet.
+  comprises five components:
+      HTTP Server:Apache HTTP Server, Apache Tomcat Server, Microsoft Internet Information Server(IIS), nginx, Google Web Server(GWS), and others.
+      HTTP Client(or Web Browser):IE, FireFox, Chrome, Safari, and other.
+      Database: MySQL, Apache Derby, mSQL, SQLite, PostgreSQL, OpenOffice's Base;
+      Client-Side Programs:could be written in HTML Form, JavaScript, VBScript, Flash, and others.
+      Server-Side Programs:could be written in Java Servlet/JSP, ASP, PHP, Perl, Python, CGI, and others.
+      
+2.Apache Tomcat HTTP Server
+  Apache Tomcat is a Java-capable HTTP server, which could execute special Java programs known as "Java Servlet" and "Java Server Pages(JSP)".
+  Tomcat is an open-source project, under the "Apache Software Foundatioin".
+  Tomcat is an HTTP application runs over TCP/IP. In other words, the Tomcat server runs on a specific TCP port from a specific IP address.
+
+  Directory list:
+  bin:startup.bat, startup.sh, shutdown.bat, shutdown.sh;
+  conf:server.xml, web.xml, context.xml;
+  webapps;
+  lib;
+  logs;
+  work;
+  
+  server.xml  --> specify port
+  web.xml     --> enable directory listing(for test)
+  content.xml --> enable automatic reload(reloadable="true")
+
+3.Java servlet
+  A Java servlet is a Java program that runs inside a HTTP server.
+  A web user invokes a servlet by issuing a URL from a browser(or HTTP client).
+  
+  In web.xml:
+      <?xml version="1.0" encoding="ISO-8859-1"?>
+      <web-app version="" 
+          xmlns="http://java.sun.com/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:shcemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web">
+      <servlet>
+          <servlet-name>somename</servlet-name>
+          <servlet-class>yourclassfilename</servlet-class>
+      </servlet>
+
+      <servlet-mapping>
+          <servlet-name>somename</servlet-name>
+          <url-pattern>/sayhello</url-pattern>
+          <!-- the class file is mapped to request URL "/sayhello", under this web application -->
+      </servlet-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
