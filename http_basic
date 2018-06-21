@@ -75,8 +75,21 @@ Response Status Code
       503 Service Unavailable:  Server cannot response due to overloading or maintenance. The client can try again later.
       504 Gateway Timeout:  Proxy or Gateway indicates that it receives a timeout from an upstream server.
    
-   
-   
+Conditional GET Requests
+  If-Modified-Since(check for response status code "304 Not Modified")
+      :date - Tell the server to send the page only if it has been modified after the specific date.
+  If-Unmodified-Since
+  If-Match
+  If-None-Match
+  If-Range
+  
+  
+  
+  
+  
+  
+  
+  
    
    
    
