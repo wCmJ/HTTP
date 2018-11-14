@@ -84,10 +84,14 @@ Conditional GET Requests
   If-Range
   
   
+proxy/cache/gateway/tunnel/agent
+HTTP proxy servers: important building blocks for web security, application integration, and performance optimization
+                    receive all of the client's HTTP requests and relaying the requests to the server.
+                    
+caches: a special type of HTTP proxy server that keeps copies of popular documents that pass through the proxy.  
   
-  
-  
-  
+gateways: special servers that act as intermediaries for other servers.
+          they are o
   
   
    
