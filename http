@@ -1,0 +1,116 @@
+HTTP:
+
+1.URI: URL/URN
+
+2.
+2.1 REQUEST: 
+	method path protocol
+	request headers
+
+	request message body
+2.2 RESPONSE
+	protocol number reson
+	response headers
+
+	response body
+
+3. method
+	get:
+		获取数资源
+		GET /
+	head:
+		获取报文首部
+	post:
+		传输实体主体
+	put:
+		上传文件，不带身份验证机制，任何人都可以上传文件，存在安全性问题
+		PUT /new.html HTTP/1.1
+		Host: www.example.com
+		Content-Type: text/html
+		Content-length: 16
+
+		<p>New File</p>
+	PATCH:
+		对资源进行部分修改
+		PATCH /file.txt HTTP/1.1
+		Host:www.example.com
+		Content-Type: application/example
+		If-Match: "e0023aa4e"
+		Content-Length: 100
+
+		body
+	DELETE:
+		DELETE /file.html HTTP/1.1
+
+	OPTIONS:
+		查询支持的方法
+
+	CONNECT:
+		要求在与代理服务器通信时建立隧道
+
+	TRACE:
+		追踪路径		
+
+4. code
+	1XX: 信息状态码，正在处理请求
+	2XX: 成功状态码，请求正常处理完毕
+	3XX: 重定向状态码，需要进行附加操作以完成请求
+		301：永久重定向
+		302：临时重定向
+		304：Not Modified。 如果请求报文首部包含一些条件， If-Match, If-Modified-Since, If-None-Match, If-Range...
+			如果不满足条件，返回304
+
+	4XX: 客户端错误码，服务器无法处理请求
+		400：bad request, 存在语法错误
+		401：Unauthorized,需要认证信息
+		403：请求被拒绝
+		404：not found
+	5XX: 服务器错误码，服务器处理请求出错
+		500: 服务器执行请求时发生错误
+		503：服务器超负载或停机，无法处理
+
+短链接： 一个HTTP连接进行一次收发
+长连接： 一个HTTP连接可以进行多次收发
+流水线(pipeline):默认情况下，HTTP请求是按顺序发出，下一个请求在收到响应之后才会被发出。
+				流水线是在同一条长连接上连续发出请求，而不用等待响应返回，可以减少延迟
+
+cookie：服务器发送到浏览并保存在本地的一小块数据。在浏览器之后向服务器再次发送请求时被携带，用于告知两个请求是否来自同一浏览器
+
+session:
+
+cache: cache-control
+		ETAG
+		If-None-Match
+
+		LAST-MODIFIED
+		If-Modified-Since
+
+proxy:
+gateway: HTTP to other procotol to communicate
+tunnel: SSL to build a secure path
+
+HTTPS:
+	HTTP有以下安全性问题：
+		使用明文，易被窃听
+		不验证通信方的身份，易伪装
+		无法证明报文的完整性，易遭篡改
+	HTTPS先让HTTP与SSL通信，再由SSL和TCP通信，HTTPS使用了隧道进行通信
+	加密（防窃听）,认证（防伪装），完整性保护（防篡改）
+
+
+1.gcc will compile *.c/*.cpp files as C and C++ respectively.
+2.g++ will compile *.c/*.cpp files as C++ files;
+3.g++ link the object files with the std C++ libraires(gcc does not do this)
+4.gcc compile C files has fewer predefined macros;
+5.*.ccp files has a few extra macros.
+gcc -lstdc++ files
+-I  -L  -l 
+
+.cpp:
+#define _GXX_WEAK__ 1
+#define __cplusplus 1
+#define __DEPRECATED 1
+#define __GNUG__ 4
+#define __EXCEPTIONS 1
+#define __private_extern__ extern
+
